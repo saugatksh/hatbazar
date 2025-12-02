@@ -3,10 +3,14 @@ function submitForm() {
     alert("Thank you! Your message has been sent.");
 }
 
-function toggleMenu() {
-    const menu = document.querySelector('nav ul');
-    menu.classList.toggle('active');
-}
+const hamburger = document.querySelector("nav .hamburger");
+const navMenu = document.querySelector("nav ul");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
+
 
 // SHOW / HIDE BACK TO TOP BUTTON
 window.addEventListener("scroll", function () {

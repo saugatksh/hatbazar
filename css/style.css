@@ -90,23 +90,40 @@ nav ul li a:hover {
     color: #f39c12;
 }
 
-/* MOBILE - HAMBURGER */
+/* HAMBURGER */
 nav .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    transition: 0.3s;
+    z-index: 999; /* keeps button above menu */
 }
 
 nav .hamburger div {
     width: 25px;
     height: 3px;
     background: white;
-    transition: 0.3s;
+    border-radius: 2px;
+    transition: 0.35s ease;
+}
+
+/* HAMBURGER → X ANIMATION */
+nav .hamburger.active div:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+nav .hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+nav .hamburger.active div:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* RESPONSIVE NAV */
 @media (max-width: 900px) {
+
     nav ul {
         position: absolute;
         top: 60px;
@@ -116,18 +133,31 @@ nav .hamburger div {
         flex-direction: column;
         gap: 20px;
         padding: 20px;
-        display: none;
-        text-align: center;
+
+        /* MENU CLOSED STATE */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+
+        transition: opacity 0.35s ease, transform 0.35s ease;
     }
 
+    /* MENU OPEN STATE */
     nav ul.active {
-        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
     }
 
     nav .hamburger {
         display: flex;
     }
 }
+
 
 /* HERO SECTION */
 .hero {
