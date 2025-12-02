@@ -8,3 +8,20 @@ function toggleMenu() {
     menu.classList.toggle('active');
 }
 
+// SHOW / HIDE BACK TO TOP BUTTON
+window.addEventListener("scroll", function () {
+    const button = document.getElementById("backToTop");
+    if (window.scrollY > 300) {
+        button.style.display = "flex";
+    } else {
+        button.style.display = "none";
+    }
+});
+
+// SCROLL TO TOP ON CLICK
+document.getElementById("backToTop").addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
