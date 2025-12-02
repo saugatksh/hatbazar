@@ -1,28 +1,7 @@
 /* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* LOGO IMAGE */
-.logo img {
-    height: 55px;        /* Adjust logo size */
-    width: auto;
-    object-fit: contain;
-    transition: 0.3s ease-in-out;   /* smooth hover effect */
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); /* soft shadow */
-    border-radius: 8px;
-}
-
-/* Hover effect */
-.logo img:hover {
-    transform: scale(1.08);          /* slightly enlarges */
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); 
-}
-
-@media (max-width: 768px) {
-    .logo img {
-        height: 40px;
-    }
-}
-
+/* GLOBAL STYLES */
 * {
     margin: 0;
     padding: 0;
@@ -33,6 +12,21 @@
 body {
     background: #f5f5f5;
     color: #333;
+}
+
+/* LOGO IMAGE */
+.logo img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+    transition: 0.3s ease-in-out;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    border-radius: 8px;
+}
+
+.logo img:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); 
 }
 
 /* NAVBAR */
@@ -71,7 +65,6 @@ nav ul li a {
     transition: 0.3s;
 }
 
-/* Underline hover animation */
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -91,7 +84,6 @@ nav ul li a:hover {
     color: #f39c12;
 }
 
-/* Hamburger icon for mobile */
 nav .hamburger {
     display: none;
     flex-direction: column;
@@ -106,33 +98,6 @@ nav .hamburger div {
     transition: 0.3s;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    nav {
-        padding: 10px 20px;
-    }
-
-    nav ul {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background: linear-gradient(135deg, #003e84dd, #e60d1ddd);
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-        display: none;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    nav .hamburger {
-        display: flex;
-    }
-}
-
 /* HERO SECTION */
 .hero {
     height: 85vh;
@@ -142,22 +107,9 @@ nav .hamburger div {
     align-items: center;
     text-align: center;
     background-color: #fff;
-
-    /* Animation properties */
     animation: slideIn 1.5s ease forwards;
-    transform: translateX(-100px); /* start offset from left */
+    transform: translateX(-100px);
     opacity: 0;
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
 }
 
 .hero h1 {
@@ -186,108 +138,86 @@ nav .hamburger div {
     background: #d35400;
 }
 
-/* CONTENT PAGES */
+/* CONTENT SECTIONS */
 .section {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 30px;
-  background: linear-gradient(to bottom right, #fdf6f0, #ffe8d6);
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-
-  /* Animation */
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
-}
-
-/* Section fade-in keyframes */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(to bottom right, #fdf6f0, #ffe8d6);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
 }
 
 .section h2 {
-  font-size: 2.5em;
-  text-align: center;
-  color: #e67300;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-size: 2.5em;
+    text-align: center;
+    color: #e67300;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .section p {
-  font-size: 1.1em;
-  line-height: 1.8;
-  margin-bottom: 20px;
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
 }
 
 .section p.intro span,
 .section p.mission em,
 .section p.commitment span {
-  color: #d35400;
-  font-weight: 600;
+    color: #d35400;
+    font-weight: 600;
 }
 
 .benefits {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
 }
 
 .benefits li {
-  background: #fff5ee;
-  border-left: 5px solid #e67300;
-  padding: 15px 20px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  transition: transform 0.3s, background 0.3s;
-
-  /* Animation */
-  opacity: 0;
-  transform: translateX(-20px);
-  animation: slideIn 0.5s forwards;
+    background: #fff5ee;
+    border-left: 5px solid #e67300;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s, background 0.3s;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideIn 0.5s forwards;
 }
 
-/* Staggered animation for list items */
 .benefits li:nth-child(1) { animation-delay: 0.2s; }
 .benefits li:nth-child(2) { animation-delay: 0.4s; }
 .benefits li:nth-child(3) { animation-delay: 0.6s; }
 .benefits li:nth-child(4) { animation-delay: 0.8s; }
 
-/* Slide-in keyframes */
-@keyframes slideIn {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 .benefits li:hover {
-  transform: translateX(5px);
-  background: #ffe0cc;
+    transform: translateX(5px);
+    background: #ffe0cc;
 }
 
 .benefits .highlight {
-  font-weight: 700;
-  color: #c0392b;
+    font-weight: 700;
+    color: #c0392b;
 }
 
-/* CONTACT FORM STYLING */
+/* CONTACT FORM */
 form {
     background: #ffffff;
     padding: 40px 30px;
     border-radius: 12px;
     width: 50%;
-    margin: 40px auto; /* center horizontally with margin */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* subtle shadow */
+    margin: 40px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    gap: 20px; /* consistent spacing between elements */
-    font-family: 'Arial', sans-serif;
+    gap: 20px;
 }
 
 form h2 {
@@ -309,8 +239,8 @@ form input, form textarea {
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 15px;
-    transition: 0.3s ease; /* smooth effect on focus */
-    resize: vertical; /* allow textarea resizing vertically only */
+    transition: 0.3s ease;
+    resize: vertical;
 }
 
 form input:focus, form textarea:focus {
@@ -336,15 +266,6 @@ form button:hover {
     transform: translateY(-2px);
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-    form {
-        width: 80%;
-        padding: 30px 20px;
-    }
-}
-
-
 /* FOOTER */
 footer {
     background: linear-gradient(135deg, #003e84, #e60d1d);
@@ -352,4 +273,118 @@ footer {
     text-align: center;
     color: white;
     margin-top: 50px;
+}
+
+/* ANIMATIONS */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 45px;
+    }
+    .hero p {
+        font-size: 18px;
+    }
+    .section h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        height: 40px;
+    }
+
+    nav {
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #003e84dd, #e60d1ddd);
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        display: none;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav .hamburger {
+        display: flex;
+    }
+
+    .hero {
+        height: 65vh;
+        padding: 0 20px;
+        background-size: cover;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .section h2 {
+        font-size: 1.8em;
+    }
+
+    form {
+        width: 80%;
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+    .hero p {
+        font-size: 14px;
+    }
+    .btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+    .section h2 {
+        font-size: 1.5em;
+    }
+    .benefits li {
+        padding: 12px 15px;
+    }
+    form {
+        width: 95%;
+        padding: 20px 15px;
+    }
 }
